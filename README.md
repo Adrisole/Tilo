@@ -33,3 +33,5 @@ Los cuentos son adaptaciones breves de los cinco libros facilitados por la cread
 Herramientas útiles y gratuitas para generar confianza familiar. Los cuentos amplían el universo Tilo; los libros y packs pueden continuar la experiencia fuera de la pantalla. Validar uso y retorno con familias antes de fijar precios o ampliar el catálogo. Las ofertas deben dirigirse a quienes acompañan, fuera de los juegos.
 
 Idioma: selector Español / English para interfaz, actividades y las cinco adaptaciones breves. Traducción editorial de la app; no sustituye las ediciones completas de los libros. El video disponible está identificado como español. Cambiar idioma pausa una respiración activa.
+
+Superpoderes: rugido silencioso y pausa con conteo de cinco segundos, repetición y apoyo; escudo de hechos/opiniones basado en las escenas provisionales de El origen. Enlace contextual al video de enojo aportado por la autora. Tilo transparente generado para la respiración. No se agregó voz en esta versión.
