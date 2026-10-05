@@ -1,5 +1,5 @@
 const assert=require('node:assert/strict');
-const {createServer}=require('./server');
+const {createServer}=require('./app');
 (async()=>{
  const server=createServer();await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
  const base=`http://127.0.0.1:${server.address().port}`;
