@@ -4,6 +4,12 @@
   "private": true,
   "description": "Cuentos, juegos y preguntas para compartir emociones en familia con Tilo",
   "scripts": {
-    "test": "node --check dist/main.js && node --check dist/adventures.js && node check-mobile.cjs"
+    "test": "node --check dist/main.js && node --check dist/adventures.js && node check-mobile.cjs && node check-server.cjs",
+    "start": "node server.js",
+    "build": "node --check server.js"
+  },
+  "main": "server.js",
+  "engines": {
+    "node": ">=22 <25"
   }
 }
