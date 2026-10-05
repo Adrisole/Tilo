@@ -1,6 +1,7 @@
 // English UI and brief story adaptations. Original books and video remain separate assets.
 let language='es';
 const english={
+'☰ Menú de Tilo':'☰ Tilo’s menu','Navegación de Tilo':'Tilo navigation','Inicio':'Home','Mis superpoderes':'My superpowers','Cuentos de Tilo':'Tilo’s stories','Libros de Tilo ↗':'Tilo’s books ↗','Para elegir en familia':'Choose together as a family',
 'Descubrí tus superpoderes':'Discover your superpowers','¡Practicaste tu superpoder!':'You practiced your superpower!','Probar otro superpoder':'Try another superpower','Pedir compañía':'Ask for company','Repetir la respiración':'Repeat the breathing',
 '🎬 CUENTOS DE TILO':'🎬 TILO’S STORIES','Tilo me ayuda, inicio':'Tilo helps me, home','me ayuda':'helps me','Guía para la familia':'Family guide','Cerrar guía':'Close guide','Para acompañar juntos':'Supporting children together',
 'Los superpoderes de Tilo son reconocer, nombrar y controlar las emociones. Practicamos notar las señales del cuerpo, decir qué sentimos y elegir cómo responder cuidándonos y cuidando a los demás.':'Tilo’s superpowers are recognizing, naming and managing emotions. We practice noticing our body’s signals, saying how we feel and choosing a response that cares for ourselves and others.',

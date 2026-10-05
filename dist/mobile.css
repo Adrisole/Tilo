@@ -3,3 +3,5 @@
 .language-switch{display:flex;justify-content:center;gap:8px;margin:0 0 12px}.language-switch button{min-height:44px;padding:8px 18px;border-radius:24px;background:#fff8eb;border:1px solid #e6d8c5;color:#63432d;font:inherit}.language-switch button[aria-pressed="true"]{background:#63432d;color:white}
 
 .power-count{display:grid;place-items:center;width:150px;height:150px;border-radius:50%;margin:24px auto;background:#ffdf91;color:#67432c;font-size:80px;font-weight:800}.video-link{display:inline-block;padding:14px;color:#67432c;text-decoration:underline}
+
+.site-menu{margin:0 0 20px;border:1px solid #e6d8c5;border-radius:16px;overflow:hidden}.site-menu summary{cursor:pointer;padding:14px 18px;color:#67432c;font-weight:700;min-height:44px;box-sizing:border-box}.site-menu nav{display:grid;padding:8px;gap:6px}.site-menu nav button,.site-menu nav a{display:block;text-align:left;font:inherit;color:#67432c;border:0;background:#fff3dc;border-radius:10px;padding:14px;text-decoration:none}.site-menu nav small{display:block;font-size:13px;margin-top:5px}.site-menu nav a{background:#953b25;color:white}
