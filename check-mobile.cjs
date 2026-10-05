@@ -1,0 +1,20 @@
+const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
+const nodes=new Map(),handlers={},tools=[],timers=new Map();let id=0;
+function node(key){if(!nodes.has(key))nodes.set(key,{innerHTML:'',textContent:'',classList:{toggle(){}},querySelector:node,setAttribute(){},focus(){},showModal(){this.open=true},close(){this.open=false}});return nodes.get(key);}
+const document={querySelector:node,addEventListener(t,f){handlers[t]=f},modelContext:{registerTool(t){tools.push(t)}}};
+const ctx=vm.createContext({document,window:{addEventListener(){}},console,setTimeout(f){const n=++id;timers.set(n,f);return n},clearTimeout(n){timers.delete(n)},requestAnimationFrame(f){f()}});
+vm.runInContext(fs.readFileSync('dist/adventures.js','utf8'),ctx);vm.runInContext(fs.readFileSync('dist/main.js','utf8'),ctx);
+const run=s=>vm.runInContext(s,ctx),click=data=>handlers.click({target:{closest(){return{dataset:data}}}});
+function tick(){const entry=timers.entries().next().value;assert.ok(entry);timers.delete(entry[0]);entry[1]();}
+assert.match(node('#app').innerHTML,/Estoy enojado/);click({open:'anger'});click({action:'start-breath'});assert.equal(run('state.phase'),'in');tick();assert.equal(run('state.phase'),'out');
+click({action:'pause-breath'});assert.equal(timers.size,0);click({action:'resume-breath'});for(let n=0;n<6;n++)tick();assert.equal(run('state.stage'),2);assert.equal(run('state.round'),3);click({action:'still-angry'});assert.match(node('#app').innerHTML,/Está bien/);
+click({open:'anger'});click({action:'start-breath'});click({action:'home'});assert.equal(timers.size,0);
+click({open:'sadness'});for(const action of ['hug','company','space']){click({action});assert.equal(run('state.answer'),action);if(action==='hug')assert.match(node('#app').innerHTML,/tilo-abrazo.png/);click({action:'sad-again'});}
+click({action:'company'});click({action:'sad-video'});assert.match(node('#app').innerHTML,/<video controls/);assert.doesNotMatch(node('#app').innerHTML,/autoplay/);
+click({open:'words'});click({word:'1'});click({action:'next-word'});assert.equal(run('state.word'),0);for(const choice of [0,1,0]){click({word:String(choice)});click({action:'next-word'});}assert.equal(run('state.word'),3);
+click({open:'memory'});const cards=run('state.cards');for(const name of ['tilo','luma','milo','chispita']){const inds=[];cards.forEach((c,i)=>{if(c===name)inds.push(i)});click({card:String(inds[0])});click({card:String(inds[0])});assert.equal(run('state.flipped.length'),1);click({card:String(inds[1])});}assert.equal(run('state.matched.length'),8);
+click({open:'memory'});const shuffled=run('state.cards'),other=shuffled.findIndex(c=>c!==shuffled[0]);click({card:'0'});click({card:String(other)});assert.equal(timers.size,1);click({action:'home'});assert.equal(timers.size,0);
+for(const story of ['enojo','miedo','tristeza','celos','palabras']){click({story});click({action:'next-story'});click({action:'prev-story'});assert.equal(run('state.page'),0);click({action:'next-story'});click({action:'next-story'});assert.equal(run('state.page'),2);}
+assert.equal(tools[0].execute({activity:'words'}).activity,'words');assert.throws(()=>tools[0].execute({activity:'invalid'}));assert.equal(run('state.view'),'words');
+for(const file of ['main.js','mobile.css','adventures.js','tilo-modelo.png','tilo-abrazo.png','tilo-compania.png','tilo-mano.png','luma.png','milo.png','chispita.png','toti.png','superpoder-tristeza.mp4'])assert.ok(fs.existsSync('dist/'+file));
+console.log('PASS: respiración y pausas, cancelación al salir, tres ayudas de tristeza, video sin autoplay, palabras, parejas, cuentos y validación de acciones.');

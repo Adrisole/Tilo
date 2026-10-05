@@ -4,6 +4,6 @@
   "private": true,
   "description": "Cuentos, juegos y preguntas para compartir emociones en familia con Tilo",
   "scripts": {
-    "test": "node --check dist/app.js && node check-flow.cjs"
+    "test": "node --check dist/main.js && node --check dist/adventures.js && node check-mobile.cjs"
   }
 }

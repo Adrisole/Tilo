@@ -1,39 +1,33 @@
-# Mini app familiar TILO
+# Tilo me ayuda
 
-Actividad gratuita en español: elegir una emoción, leer un cuento breve, elegir una forma de acompañar, conversar y continuar fuera de la pantalla. Cinco recorridos basados en los libros: enojo, miedo, tristeza, celos y talentos, y palabras y empatía.
+Mini app para celular: herramientas emocionales, palabras amables, juegos y cuentos para chicos y familias.
 
-Los cuentos son adaptaciones breves de la Colección Inteligencia Emocional TILO, de Atómica, facilitada por su autora. Tilo es el elefantito de barba roja; Luma es su amiga tortuga. La ilustración se extrajo del Libro 1 a color. Se revisaron también las páginas de origen de la edición especial; no se publican los libros completos. No se recopilan respuestas ni datos personales; el recorrido vive solamente en memoria.
+## Primera versión
 
-## Abrir localmente
+- Respiración de la trompa: tres ciclos suaves, animación sincronizada, pausa y salida. Al terminar pregunta cómo se siente, sin exigir un resultado.
+- Tristeza: elegir abrazo, compañía o espacio. La imagen del abrazo pertenece a este recorrido.
+- Palabras amables: tres situaciones con botones y feedback.
+- Juego de parejas con Tilo, Luma, Milo y Chispita.
+- Cinco cuentos breves adaptados de la colección, organizados por tema.
+- Un video local de tristeza, con controles, sin reproducción automática. Los demás videos se incorporarán al producirse. No hay enlaces ficticios a YouTube.
+- Guía para la familia separada de las actividades.
 
-Abrir `dist/index.html` en un navegador. No requiere instalación ni servidor.
+Los botones de miedo y frustración abren por ahora sus cuentos. Las herramientas específicas de esas emociones quedan para próximas versiones. La app no guarda elecciones ni recopila datos personales.
 
-También se puede iniciar una vista previa local desde la raíz del repositorio:
+## Abrir
 
-```sh
-python -m http.server 5178 --bind 127.0.0.1 --directory dist
-```
+Abrir `dist/index.html` en un navegador, o ejecutar `python -m http.server 5178 --bind 127.0.0.1 --directory dist` y visitar http://127.0.0.1:5178.
 
-Abrir http://127.0.0.1:5178 en el navegador. Para detener el servidor, presionar Ctrl+C.
+## Comprobar
 
-## Comprobaciones
+`npm test` ejecuta comprobaciones de sintaxis, cancelación de temporizadores, respiración, palabras, memoria, cuentos y archivos. No requiere instalar dependencias.
 
-Con Node.js instalado, ejecutar `npm test`. No requiere instalar dependencias.
-Se comprueba la sintaxis y los cinco recorridos: avance, retroceso, elección antes de conversar, cierre y reinicio. Las comprobaciones usan un DOM simulado; no sustituyen la revisión visual y de accesibilidad en un navegador.
+## Fuentes y archivos
 
-## Archivos
+Los cuentos son adaptaciones breves de los cinco libros facilitados por la creadora de TILO: La torre que se derrumbó; El sendero de las luciérnagas; Después de la lluvia; Cada uno a su manera; El angelito de las palabras. Tilo es el elefante de barba roja, Luma es la tortuga y Toti es el tucán. Las imágenes y el video fueron suministrados por la creadora; no se suben los libros completos.
 
-- `dist/index.html`: estructura de la mini app.
-- `dist/style.css`: diseño adaptable a celular y computadora.
-- `dist/app.js`: navegación.
-- `dist/adventures.js`: adaptaciones, juegos y preguntas.
-- `dist/tilo.jpg`: ilustración original del Libro 1 a color.
-- `check-flow.cjs`: comprobaciones de los recorridos.
+`dist/main.js` contiene las actividades; `dist/mobile.css` el diseño; `dist/adventures.js` las adaptaciones. La carpeta `dist` se puede publicar en un servicio estático. La publicación de Sites tiene acceso privado y su configuración se conserva fuera de este repo.
 
-La versión publicada en Sites tiene acceso privado. Este repositorio no contiene credenciales ni la configuración interna de esa publicación. Para desplegar en otro servicio estático, usar `dist` como carpeta pública.
+## Estrategia comercial
 
-## Propuesta comercial
-
-Una actividad completa gratis permite probar el valor familiar antes de comprar. El futuro pack se cobra por pack familiar, no por niño ni por usuario. La estrategia existente propone USD 9–15 como hipótesis inicial, pendiente de entrevistas y compras reales. No se muestran precios ni se reciben pagos en esta versión; el pack figura en preparación en el espacio para adultos.
-
-Antes de habilitar ventas: definir contenidos entregables, validar precio con adultos responsables y conectar un medio de pago y entrega real.
+Herramientas útiles y gratuitas para generar confianza familiar. Los cuentos amplían el universo Tilo; los libros y packs pueden continuar la experiencia fuera de la pantalla. Validar uso y retorno con familias antes de fijar precios o ampliar el catálogo. Las ofertas deben dirigirse a quienes acompañan, fuera de los juegos.
