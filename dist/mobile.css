@@ -15,3 +15,9 @@
 .family-links-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:.75rem}
 .family-links-grid a{display:flex;align-items:center;justify-content:center;gap:.4rem;min-height:54px;padding:.75rem;border-radius:14px;background:#fff;color:#3e352b;font-weight:700;text-decoration:none;border:2px solid #e7d3aa}
 .family-links-grid a:hover,.family-links-grid a:focus-visible{border-color:#8d6530;outline-offset:3px}
+
+/* Distinctive Amazon and YouTube button colors */
+.family-links-grid a.amazon-link{background:#ff9900;color:#171717;border-color:#d78000}
+.family-links-grid a.youtube-link{background:#ff0033;color:#fff;border-color:#d9002b}
+.family-links-grid a.amazon-link:hover,.family-links-grid a.amazon-link:focus-visible{background:#f2a900;border-color:#9c6100}
+.family-links-grid a.youtube-link:hover,.family-links-grid a.youtube-link:focus-visible{background:#d9002b;border-color:#a80021}
