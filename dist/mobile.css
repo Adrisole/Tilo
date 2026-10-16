@@ -21,3 +21,10 @@
 .family-links-grid a.youtube-link{background:#ff0033;color:#fff;border-color:#d9002b}
 .family-links-grid a.amazon-link:hover,.family-links-grid a.amazon-link:focus-visible{background:#f2a900;border-color:#9c6100}
 .family-links-grid a.youtube-link:hover,.family-links-grid a.youtube-link:focus-visible{background:#d9002b;border-color:#a80021}
+
+.word-option.game-correct,.memory button.game-correct{background:#d6f8df!important;border:4px solid #20a351!important;color:#14572d!important}
+.word-option.game-incorrect,.memory button.game-incorrect{background:#ffe0e0!important;border:4px solid #e04444!important;color:#8c2020!important}
+.game-result{padding:16px;border-radius:18px;font-weight:800;font-size:1.1rem}
+.game-result-good{background:#d6f8df;color:#14572d;border:3px solid #20a351}
+.game-result-try{background:#ffe0e0;color:#8c2020;border:3px solid #e04444}
+.word-option{min-height:62px;touch-action:manipulation}
