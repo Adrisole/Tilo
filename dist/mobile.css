@@ -38,3 +38,10 @@
 .kid-steps{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:8px auto 14px}
 .kid-steps span{background:#e1f2e6;border:2px solid #85bd9a;border-radius:16px;padding:12px 16px;font-size:clamp(16px,3vw,21px);font-weight:850}
 .breath-cue{font-size:clamp(24px,5vw,34px)!important;font-weight:900!important}
+
+/* Escudo: mismo lenguaje visual de Detectives */
+.shield-progress{display:flex;gap:7px;margin:16px auto 20px;max-width:460px}.shield-progress span{height:10px;flex:1;border-radius:12px;background:#e6d9c6}.shield-progress span.done{background:#f3b33f}
+.shield-character{max-height:205px;object-fit:contain}.shield-phrase{font-size:clamp(21px,4.5vw,29px);font-weight:850;padding:20px;border:3px solid #f0d6a4;border-radius:20px;background:#fff9e9}
+.shield-choices{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;width:100%}.shield-choices .shield-option{min-height:90px;border-radius:22px;border:3px solid #dfcfb9;background:#fff;color:#4d3526;font-size:clamp(19px,4vw,25px);font-weight:900;cursor:pointer;touch-action:manipulation}
+.shield-option.game-correct{background:#d6f8df!important;border-color:#20a351!important;color:#14572d!important}.shield-option.game-incorrect{background:#ffe0e0!important;border-color:#e04444!important;color:#8c2020!important}
+@media(max-width:380px){.shield-choices{grid-template-columns:1fr}}
